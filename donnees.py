@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-def dico:
+def dico():
     mots = ["bâteau", "chat", "pendule", "soleil", "lune", "malade", "citron",
             "boisson", "prière", "vinaigre", "vitesse", "oignon", "bière",
             "bâton", "bientôt", "terre", "vide", "raisin", "écran", "bible",
@@ -11,6 +11,15 @@ def dico:
             "propre", "saleté", "médecin", "calcul", "vide"]
     return mots
 
-def nombreChances:
+def nombreChances():
     return 8
 
+def saisirCaract(message):
+    estVide = True
+    while estVide:
+        saisie = input(message)
+        if saisie.isalpha():
+            estVide = False
+        else:
+            print("Votre nom ne doit comporter que des lettres!")
+    return saisie
