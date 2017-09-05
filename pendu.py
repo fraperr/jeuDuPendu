@@ -37,11 +37,12 @@ print(motCache)
 
 i = 0
 # pdb.set_trace()
-while i < 8:
+reponse = ''
+while i < 8 and reponse.lower() != unMot:
     # Le joueur peut choisir une lettre
     choixLettre = ''
     while len(choixLettre) != 1:
-        choixLettre = donnees.saisirCaract("Choisissez une lettre: ")
+        choixLettre = donnees.saisirCaract("Choisissez une lettre: ").lower()
         if len(choixLettre) > 1:
             print("Vous n'avez droit qu'à une seule lettre.")
 
@@ -54,9 +55,13 @@ while i < 8:
         del motCacheL[position]
         motCacheL.insert(position, choixLettre)
 
-    motCache = ''
-    for lettre in  motCacheL:
-        motCache += lettre
-    print(motCache)
+    print(donnees.listEnChaine(motCacheL))
     i += 1
+
+    reponse = input("Avez-vous trouver de quel mot il s'agit: ")
+
+if reponse.lower() == unMot:
+    print("Bravo vous avez gagné!")
+else:
+    print("Désolé, vous avez perdu!")
 

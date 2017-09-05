@@ -61,3 +61,8 @@ def trouveToutesLesPositions(motL, lettre):
             i = position + 1
     return positionL
 
+def listEnChaine(liste):
+    chaine = ''
+    for elem in liste:
+        chaine += elem
+    return chaine
