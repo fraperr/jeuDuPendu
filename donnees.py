@@ -66,3 +66,8 @@ def listEnChaine(liste):
     for elem in liste:
         chaine += elem
     return chaine
+
+def enregistre(monFichier):
+	with open(monFichier, 'wb') as fichier:
+		monDepickler = pickle.Pickler(fichier)
+		score = monDepickler.dump()
